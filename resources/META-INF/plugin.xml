@@ -1,0 +1,54 @@
+<idea-plugin>
+  <id>com.myhuanghai.plugin.ui2view</id>
+  <name>ui2view</name>
+  <version>1.0</version>
+  <vendor email="1165441461@qq.com" url="http://www.myhuanghai.com">huanghai</vendor>
+
+  <description><![CDATA[
+      在布局文件中写下 @dimen/x596 ,鼠标双击选中x596，按快捷键ctrl+H，本插件可以基于UI图上的像素以320*480的手机为基准（1dp=1px）自动生成values文件夹以及其中的dimens.xml文件，已有的文件不会被覆盖.<br>
+     <!-- <em>most HTML tags may be used</em>-->
+    ]]></description>
+
+  <change-notes><![CDATA[
+      目前这个版本主要是基于UI图的分辨率是1080*1920，屏幕像素密度为72的，下个版本会推出默认配置的更改：机型选择，UI分辨率选择等内容<br>
+      <!--<em>most HTML tags may be used</em>-->
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="MakeUi2ViewId" class="com.myhuanghai.ui2view.MakeUi2View" text="ui2view" description="ui2view">
+      <add-to-group group-id="MainMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl H"/>
+    </action>
+
+    <action id="aaa" class="com.myhuanghai.ui2view.aaa" text="aaa" description="aaa">
+      <add-to-group group-id="InspectCodeGroup" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt H"/>
+    </action>
+
+
+  </actions>
+
+  <application-components>
+    <component>
+      <implementation-class>com.myhuanghai.ui2view.ui2view</implementation-class>
+    </component>
+    <component>
+      <implementation-class>com.myhuanghai.ui2view.MyComponent</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>
